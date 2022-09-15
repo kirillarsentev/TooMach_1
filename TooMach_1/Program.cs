@@ -48,19 +48,32 @@ namespace TooMach_1
             Console.WriteLine(next);
 
 
-
-            Console.WriteLine(" Задача 4. Решение квадратного уравнения");
+            Console.WriteLine("Домашнее задание 4. Квадратное уравнение");
             Console.WriteLine("Введите число a :");
-            int num_1 = int.Parse(Console.ReadLine());
+            int num1 = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Введите число b :");
-            int num_2 = int.Parse(Console.ReadLine());
+            int num2 = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Введите число c :");
             int num_3 = int.Parse(Console.ReadLine());
-            double discrim = Math.Pow(num_2, 2) - 4 * num_1 * num_3;
-            double root_1 = (num_2 * -1 + Math.Sqrt(discrim)) / 2 * num_1;
-            double root_2 = (num_2 * -1 - Math.Sqrt(discrim)) / 2 * num_1;
-            Console.WriteLine("Корень 1 : " + root_1);
-            Console.WriteLine("корень 2:" + root_2);
+            double discrim = num2 * num2 - 4 * num1 * num_3;
+            
+            if (discrim < 0)
+            {
+                Console.WriteLine("Корней нет");
+            }
+            else if (discrim == 0)
+            {
+                double x1 = -1 * num2 / 2 * num1;
+                Console.WriteLine(x1);
+
+            }
+            else
+            {
+                double x2 = (-num2 + Math.Pow(discrim, 0.5)) / (2 * num1);
+                double x3 = (-num2 - Math.Pow(discrim, 0.5)) / (2 * num1);
+                Console.WriteLine("Корень 1 : " + x2 + "\n" + "Корень 2 : " + x3);
+
+            }
         }
     }
 }
